@@ -1,0 +1,23 @@
+<div class="mainContent">
+  <div *ngIf="pet">
+    <h2>{{pet.Name | uppercase}} Details</h2>
+    <div><span>id: </span>{{pet.Id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="name" *ngIf="edit===true" placeholder="name"/>
+        <Label *ngIf="edit===false">{{name}}</Label>
+      </label>
+    </div>
+  </div>
+  <div class="button-box" *ngIf="edit===false">
+    <button mat-button (click)="goBack()">go back</button>
+    <button mat-button (click)="enableEdit(true)">Edit</button>
+  </div>
+  <div class="button-box" *ngIf="edit===true">
+    <button mat-button (click)="openDialog()">Save</button>
+    <button mat-button (click)="enableEdit(false)">Cancel</button>
+  </div>
+
+</div>
+
+

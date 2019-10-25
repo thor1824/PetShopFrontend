@@ -1,0 +1,14 @@
+<div class="mainContent">
+  <div class="subcontent">
+    <h3>Pets</h3>
+    <div class="grid" >
+      <a class="col-1-4" *ngFor="let pet of pets"
+         routerLink="/pets/{{pet.Id}}">
+        <div class="module hero">
+          <h4>{{pet.Name}}</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
