@@ -1,0 +1,35 @@
+<div class="mainContent">
+  <div class="subcontent">
+
+    <div class="mat-headline"><h2 class="bob">Pets</h2></div>
+
+
+
+    <div class="grid">
+      <div *ngFor="let pet of pets" class="something">
+        <a routerLink="/pets/{{pet.Id}}">
+          <div class="module">
+            <img [src]=pet.imageUrl class="card-info-img">
+            <p class="card-info-text">Name: {{pet.Name}}</p>
+            <p class="card-info-text">Species: {{pet.Name}}</p>
+            <p class="card-info-text">Color: {{pet.Name}}</p>
+            <p class="card-info-text">Price: {{pet.Name}}</p>
+          </div>
+        </a>
+
+        <button (click)="deletePet(pet.Id)" align="right" class="button-close">
+          <i class=ico-times></i>
+        </button>
+
+      </div>
+    </div>
+    <div class="pet-overview-toolbar">
+      <div class="pet-overview-tool">
+        <a routerLink="/pets" style="text-decoration: none">
+          <h2 class="tool">+</h2>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

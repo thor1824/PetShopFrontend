@@ -1,0 +1,69 @@
+<div class="mainContent">
+  <div *ngIf="pet" class="pet-detail-card">
+    <h2>{{pet.Name | uppercase}} Details</h2>
+    <div class="pet-detail-img">
+      <img [src]=pet.imageUrl align="left" class="card-info-img">
+      <div class="pet-detail-url" valign="bottom" >
+        <label class="lbl-static">ImageUrl:</label>
+        <input class="input-txt" *ngIf="edit===true" [(ngModel)]="imageUrl" placeholder="name" value="{{pet.imageUrl}}"/>
+        <label *ngIf="edit===false" class="lbl-Var">{{imageUrl}}</label>
+      </div>
+    </div>
+    <div class="txt-input-box">
+      <div class="pet-detail">
+        <label class="lbl-static">Id: </label>
+        <label class="lbl-var">{{pet.Id}}</label>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Name:</label>
+        <input class="input-txt" *ngIf="edit===true" [(ngModel)]="name" placeholder="name" value="{{pet.Name}}"/>
+        <label *ngIf="edit===false" class="lbl-Var">{{pet.Name | titlecase}}</label>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Species:</label>
+        <input class="input-txt" *ngIf="edit===true" [(ngModel)]="name" placeholder="Species" value="{{pet.Name}}"/>
+        <label *ngIf="edit===false" class="lbl-Var">{{pet.Name | titlecase}}</label>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Color:</label>
+        <input class="input-txt" *ngIf="edit===true" [(ngModel)]="name" placeholder="Color" value="{{pet.Name}}"/>
+        <label *ngIf="edit===false" class="lbl-Var">{{pet.Name | titlecase}}</label>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Price:</label>
+        <input class="input-txt" *ngIf="edit===true" [(ngModel)]="name" placeholder="Price" value="{{pet.Name}}"/>
+        <label *ngIf="edit===false" class="lbl-Var">{{pet.Name | titlecase}}</label>
+      </div>
+    </div>
+    <div class="pet-detail">
+      <label class="lbl-static-date">Birthday:</label>
+      <div class="pet-detail-date">
+        <input matInput [matDatepicker]="picker" class="input-date" placeholder="Birthday">
+        <mat-datepicker-toggle [for]="picker" matSuffix>
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+    <div class="pet-detail">
+      <label class="lbl-static-date">Sold Date:</label>
+      <div class="pet-detail-date">
+        <input matInput [matDatepicker]="picker2" class="input-date" placeholder="Sold Date">
+        <mat-datepicker-toggle [for]="picker2" matSuffix>
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="edit===false" class="button-box">
+    <button (click)="goBack()" mat-button>go back</button>
+    <button (click)="enableEdit(true)" mat-button>Edit</button>
+  </div>
+  <div *ngIf="edit===true" class="button-box">
+    <button (click)="openDialog()" mat-button>Save</button>
+    <button (click)="enableEdit(false)" mat-button>Cancel</button>
+  </div>
+</div>
+
+

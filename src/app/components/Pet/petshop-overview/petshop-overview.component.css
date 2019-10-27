@@ -1,0 +1,107 @@
+/* The navbar container */
+.grid {
+  overflow: hidden;
+  float: left;
+  width: 99% ;
+
+}
+
+.ico-times:before {
+  content: "\2716";
+  text-align: center;
+  font-style: normal;
+  color: white;
+}
+
+.module {
+  background-color: #333;
+  vertical-align: top;
+  display: inline-block;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: left;
+  width: 405px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 3px 0px black;
+}
+
+/* Links - change color on hover */
+.something .module:hover {
+  background-color: #404040;
+}
+
+.card-info-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 230px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.card-info-img {
+  float: left;
+  align: left;
+  margin-right: 16px;
+}
+
+.something a, .button-close {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.something {
+  float: left;
+  display: grid;
+}
+
+.button-close {
+  outline: none;
+  background-color: transparent;
+  border-color: transparent;
+  margin-left: 405px;
+  height: 30px;
+  width: 30px;
+}
+
+.pet-overview-toolbar {
+  display: grid;
+  position: absolute;
+  right:15px;
+}
+
+.pet-overview-tool {
+  width: 40px;
+  background-color: #333;
+  height: 40px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bob {
+  margin-left: 10px;
+}
+
+.tool {
+  padding-top: 5px;
+  align: center;
+  height: 100%;
+  color: #eeeeee;
+  margin: auto;
+
+
+}
+
+
+
+
+
+
+
+

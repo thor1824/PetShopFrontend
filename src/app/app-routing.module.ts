@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent } from './NamePending/dashboard/dashboard.component';
-import { PetshopOverviewComponent } from './Pet/petshop-overview/petshop-overview.component';
-import { PetDetailComponent } from './Pet/pet-detail/pet-detail.component';
+import { DashboardComponent } from './components/NamePending/dashboard/dashboard.component';
+import { PetshopOverviewComponent } from './components/Pet/petshop-overview/petshop-overview.component';
+import { PetDetailComponent } from './components/Pet/pet-detail/pet-detail.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },

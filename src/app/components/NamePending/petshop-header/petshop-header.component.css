@@ -6,7 +6,7 @@
 }
 
 /* Navbar links */
-.topnav a {
+.topnav .entity-route {
   float: right;
   display: block;
   color: #f2f2f2;
@@ -16,7 +16,21 @@
 }
 
 /* Links - change color on hover */
-.topnav a:hover {
+.topnav .entity-route:hover {
   background-color: #ddd;
   color: black;
+}
+nav a:visited, a:link {
+  color: #334953;
+}
+
+nav a.active {
+  color: #039be5;
+}
+
+.logo {
+  margin-top: 5px;
+  margin-left: 5px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
