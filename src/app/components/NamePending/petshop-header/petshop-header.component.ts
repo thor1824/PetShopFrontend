@@ -12,4 +12,9 @@ export class PetshopHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  onKeydown(event) {
+    if (event.key === 'Enter') {
+      console.log('seach');
+    }
+  }
 }

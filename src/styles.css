@@ -1,5 +1,5 @@
 /* Application-wide Styles */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 
 h1 {
   color: #369;
@@ -26,10 +26,11 @@ body{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebc7c7', endColorstr='#db7070',GradientType=1 );
 }
 
-.mainContent{
+.main-content{
   min-height: 700px;
   margin: 1%;
   padding: 1em;
+  margin-top: 50px;
 }
 
 

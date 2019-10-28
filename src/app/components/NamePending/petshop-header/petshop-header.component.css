@@ -15,6 +15,12 @@
   text-decoration: none;
 }
 
+.header-box {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
 /* Links - change color on hover */
 .topnav .entity-route:hover {
   background-color: #ddd;
@@ -33,4 +39,24 @@ nav a.active {
   margin-left: 5px;
   -webkit-filter: invert(100%);
   filter: invert(100%);
+}
+
+.search-bar-container{
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 100%;
+  vertical-align: super;
+  display: inline-block;
+  alignment: right;
+}
+
+.search-bar {
+  width: 250px;
+  height: 20px;
+  -webkit-text-fill-color: white;
+  background-color: gray;
+  border-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
 }

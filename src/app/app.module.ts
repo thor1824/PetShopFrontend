@@ -17,6 +17,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MatInputModule} from '@angular/material/input';
     MatNativeDateModule,
     MatDatepickerModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   entryComponents: [ConfirmationDialogComponent],
   providers: [],
