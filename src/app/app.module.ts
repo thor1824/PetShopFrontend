@@ -18,6 +18,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { PetCreateComponent} from './components/Pet/pet-create/pet-create.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PetshopFooterComponent,
     PetshopOverviewComponent,
     PetDetailComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    PetCreateComponent
   ],
   imports: [
     BrowserModule,

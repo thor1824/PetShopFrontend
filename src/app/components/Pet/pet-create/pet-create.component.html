@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="pet-detail-card">
+    <h2>Create New Pet</h2>
+    <div class="pet-detail-img">
+      <img [src]="placeholderImg" align="left" class="card-info-img">
+      <div class="pet-detail-url" valign="bottom" >
+        <label class="lbl-static">ImageUrl:</label>
+        <input class="input-txt"  [(ngModel)]="imageUrl" placeholder="image url" value=""/>
+      </div>
+    </div>
+    <div class="txt-input-box">
+      <div class="pet-detail">
+        <label class="lbl-static">Name:</label>
+        <input class="input-txt"  [(ngModel)]="name" placeholder="name"/>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Species:</label>
+        <input class="input-txt"  [(ngModel)]="species" placeholder="Species" />
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Color:</label>
+        <input class="input-txt" [(ngModel)]="color" placeholder="Color"/>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static">Price:</label>
+        <input class="input-txt"  [(ngModel)]="price" placeholder="Price"/>
+      </div>
+    </div>
+    <div class="pet-detail">
+      <label class="lbl-static-date">Birthday:</label>
+      <div class="pet-detail-date">
+        <input matInput [matDatepicker]="picker" class="input-date" placeholder="Birthday" [(ngModel)]="birthDate" >
+        <mat-datepicker-toggle [for]="picker" matSuffix>
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+    <div class="pet-detail">
+      <label class="lbl-static-date">Sold Date:</label>
+      <div class="pet-detail-date">
+        <input matInput [matDatepicker]="picker2" class="input-date" placeholder="Sold Date">
+        <mat-datepicker-toggle [for]="picker2" matSuffix>
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </div>
+    </div>
+  </div>
+  <div class="button-box">
+    <button (click)="cancel()" mat-button>Cancel</button>
+    <button (click)="createNewPet()" mat-button>Add</button>
+  </div>
+</div>
+
+

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
 import {Pet} from '../../../Shared/Entity/Pet';
 import {PetService} from '../../Services/pet.service';
 

@@ -11,7 +11,7 @@ import { Pet } from '../../Shared/Entity/Pet';
 export class PetService {
 
   pets: Pet[] = [
-    {Id: 1 , Name: 'Lorem Ipsum', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
+    {Id: 1 , Name: 'Lorem Ipsum', imageUrl: 'https://via.placeholder.com/150'},
     {Id: 2 , Name: 'bob', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
     {Id: 3 , Name: 'john', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
     {Id: 4 , Name: 'Rabsu', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
