@@ -1,0 +1,10 @@
+<h2 style="color:whitesmoke" align="center">Login</h2>
+<div mat-dialog-content align="center">
+  <input class="input-txt" placeholder="User Name">
+  <input type="password" class="input-txt" placeholder="Password"/>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Login</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>
+

@@ -4,8 +4,8 @@
     <div class="search-bar-container">
       <input (keydown.enter)="onKeydown($event)" [(ngModel)]="searchText" class="search-bar" placeholder="Seach.."/>
     </div>
-    <a class="entity-route" routerLink="/pets">login</a>
-    <a class="entity-route" routerLink="/pets">Owners</a>
+    <a class="entity-route" (click)="openLoginWindow()">login</a>
+    <a class="entity-route" routerLink="/owners">Owners</a>
     <a class="entity-route" routerLink="/pets">Pets</a>
   </nav>
 

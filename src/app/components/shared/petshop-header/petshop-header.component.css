@@ -14,12 +14,14 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .header-box {
   position: fixed;
   width: 100%;
   top: 0px;
+  z-index: 1;
 }
 
 /* Links - change color on hover */
@@ -55,7 +57,7 @@ nav a.active {
 .search-bar {
   width: 250px;
   height: 25px;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: lightgray;
   background-color: gray;
   border-style: none;
   padding-left: 15px;

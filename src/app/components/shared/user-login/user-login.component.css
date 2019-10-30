@@ -1,0 +1,17 @@
+.input-txt {
+  clear: both;
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+  background-color: gray;
+  border-style: none;
+  cursor: text;
+  outline: none;
+  color: #eeeeee;
+  width: 80%;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.mat-dialog-container {
+  background-color: #333333;
+}

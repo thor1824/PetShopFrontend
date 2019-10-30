@@ -128,7 +128,13 @@
   border-radius: 20px;
   text-align: center;
   text-decoration: none;
+  box-shadow: 1px 1px 3px 0px black;
 }
+
+.pet-overview-tool:hover {
+  background-color: #404040;
+}
+
 
 .overview-headline {
   margin-left: 10px;
