@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {DashboardComponent} from './components/NamePending/dashboard/dashboard.component';
@@ -19,6 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PetCreateComponent} from './components/Pet/pet-create/pet-create.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,8 +33,7 @@ import { PetCreateComponent} from './components/Pet/pet-create/pet-create.compon
     ConfirmationDialogComponent,
     PetCreateComponent
   ],
-  imports: [
-    BrowserModule,
+  imports: [BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatDialogModule,
@@ -43,7 +43,9 @@ import { PetCreateComponent} from './components/Pet/pet-create/pet-create.compon
     MatDatepickerModule,
     MatIconModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   entryComponents: [ConfirmationDialogComponent],
   providers: [],

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pet-create',
@@ -16,7 +18,16 @@ export class PetCreateComponent implements OnInit {
   price: number;
   placeholderImg;
   birthDate: Date;
-  constructor() { }
+
+  newPetForm = this.fb.group({
+    imageUrl: ['', Validators.required],
+    name: ['', Validators.required],
+    species: ['', Validators.required],
+    color: ['', Validators.required],
+    price: ['', Validators.required],
+    birthDate: ['', Validators.required],
+  });
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.placeholderImg = 'https://via.placeholder.com/150';

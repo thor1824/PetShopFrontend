@@ -56,8 +56,8 @@ export class PetDetailComponent implements OnInit
   saveChanges(): void
   {
     console.log(this.name);
-    console.log(this.pet.Name);
-    this.pet.Name = this.name;
+    console.log(this.pet.name);
+    this.pet.name = this.name;
     this.pet.imageUrl = this.imageUrl;
     this.petService.editPet(this.pet);
     this.edit = false;
@@ -66,8 +66,7 @@ export class PetDetailComponent implements OnInit
   setData(): void
   {
     console.log('start');
-    this.name = this.pet.Name.toString();
-    this.imageUrl = this.pet.imageUrl.toString();
+
   }
 
 

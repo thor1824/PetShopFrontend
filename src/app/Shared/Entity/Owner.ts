@@ -1,2 +1,2 @@
-export class Owner {
+export interface Owner {
 }

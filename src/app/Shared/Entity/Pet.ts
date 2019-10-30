@@ -1,7 +1,13 @@
 import {Owner} from './Owner';
 
-export class Pet {
-  Id: number;
-  Name: string;
-  imageUrl: string;
+export interface Pet {
+  id: number;
+  name: string;
+  imageUrl?: string;
+  birthDate: Date;
+  soldDate: Date;
+  color: string;
+  price: number;
+  pType: number;
+  previousOwners?: Owner[];
 }

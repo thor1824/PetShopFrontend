@@ -1,10 +1,7 @@
 <div class="main-content">
   <div class="subcontent">
-
     <div class="mat-headline"><h2 class="bob">Pets</h2></div>
-
-
-    <div class="grid-container">
+    <div *ngIf="pageList" class="grid-container">
       <div class="pet-overview-toolbar">
         <div class="pet-overview-tool">
           <a routerLink="/create_pet" style="text-decoration: none">
@@ -13,27 +10,26 @@
         </div>
       </div>
       <div class="grid">
-        <div *ngFor="let pet of pets" class="something">
-          <a routerLink="/pets/{{pet.Id}}">
+        <div *ngFor="let pet of pageList.data" class="something">
+          <a routerLink="/pets/{{pet.id}}">
             <div class="module">
-              <img [src]=pet.imageUrl class="card-info-img">
-              <p class="card-info-text">Name: {{pet.Name}}</p>
-              <p class="card-info-text">Species: {{pet.Name}}</p>
-              <p class="card-info-text">Color: {{pet.Name}}</p>
-              <p class="card-info-text">Price: {{pet.Name}}</p>
+              <img *ngIf="pet.imageUrl" [src]=pet.imageUrl class="card-info-img">
+              <img *ngIf="!pet.imageUrl" class="card-info-img" src="https://via.placeholder.com/150">
+              <p class="card-info-text">Name: {{pet.name}}</p>
+              <p class="card-info-text">Species: {{pet.name}}</p>
+              <p class="card-info-text">Color: {{pet.name}}</p>
+              <p class="card-info-text">Price: {{pet.name}}</p>
             </div>
           </a>
-
-          <button (click)="deletePet(pet.Id)" align="right" class="button-close">
+          <button (click)="deletePet(pet.id)" align="right" class="button-close">
             <i class=ico-times></i>
           </button>
-
         </div>
       </div>
       <div class="page-controller">
-        <mat-paginator class="paginator" [length]="100"
-                       [pageSize]="10"
-                       [pageSizeOptions]="[5, 10, 25, 100]">
+        <mat-paginator (page)="changePageData($event)" [length]="pageList.itemsTotal"
+                       [pageIndex]="pageList.pageIndex"
+                       [pageSizeOptions]="[12, 24, 36]" [pageSize]="pageList.itemsPrPage" class="paginator">
         </mat-paginator>
       </div>
     </div>

@@ -29,8 +29,8 @@ button:hover {
 }
 
 button:disabled {
-  background-color: #eee;
-  color: #ccc;
+  background-color: rgba(44, 43, 44, 0.78);
+  color: #000000;
   cursor: auto;
 }
 

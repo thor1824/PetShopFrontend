@@ -42,7 +42,7 @@ nav a.active {
 }
 
 .search-bar-container{
-  padding-left: 10px;
+  padding-left: 30px;
   padding-right: 10px;
   height: 100%;
   vertical-align: super;
@@ -52,7 +52,7 @@ nav a.active {
 
 .search-bar {
   width: 250px;
-  height: 20px;
+  height: 25px;
   -webkit-text-fill-color: white;
   background-color: gray;
   border-style: none;

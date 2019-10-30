@@ -1,36 +1,37 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Pet } from '../../Shared/Entity/Pet';
+import {environment} from '../../../environments/environment';
+import { PageList } from 'src/app/Shared/Entity/PageList';
+import {error} from 'util';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class PetService {
 
-  pets: Pet[] = [
-    {Id: 1 , Name: 'Lorem Ipsum', imageUrl: 'https://via.placeholder.com/150'},
-    {Id: 2 , Name: 'bob', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
-    {Id: 3 , Name: 'john', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
-    {Id: 4 , Name: 'Rabsu', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
-    {Id: 5 , Name: 'Fluffy', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
-    {Id: 6 , Name: 'Jimbo', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'},
-    {Id: 7 , Name: 'Mong', imageUrl: 'https://via.placeholder.com/150/0000FF/808080'}
-  ];
-  constructor() { }
-  getPets(): Observable<Pet[]> {
-    return of(this.pets);
+
+export class PetService {
+  PET_API_URL: string = environment.RestApiUrl + '/pets';
+  constructor(private http: HttpClient) { }
+  getPets(pageIndex: number, pageSize: number): Observable<PageList<Pet>> {
+    return this.http.get<PageList<Pet>>(this.PET_API_URL + '?pageIndex=' + pageIndex + '&pageSize=' + pageSize);
   }
   getPet(id: number): Observable<Pet> {
-    return of(this.pets.find( pet => pet.Id === id));
+    return this.http.get<Pet>(this.PET_API_URL + '/' + id);
   }
-  deletePet(id: number): void {
+  deletePet(id: number): Observable<Pet> {
+    console.log('bob1.2')
+    return this.http.delete<Pet>(this.PET_API_URL + '/' + id);
   }
   createPet(pet: Pet): void {
   }
   editPet(pet: Pet): void {
-    console.log('edit:' + pet)
+    console.log('edit:' + pet);
   }
 }
