@@ -91,9 +91,16 @@
   outline: none;
   background-color: transparent;
   border-color: transparent;
-  margin-left: 405px;
+  margin-left: 410px;
   height: 30px;
   width: 30px;
+  min-width: 30px;
+  line-height: unset;
+  padding: unset;
+}
+
+.button-close.mat .button-wrapper {
+  padding-bottom: 5px;
 }
 
 .pet-overview-toolbar {

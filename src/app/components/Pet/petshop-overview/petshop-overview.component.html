@@ -9,21 +9,27 @@
           </a>
         </div>
       </div>
+
       <div class="grid">
-        <div *ngFor="let pet of pageList.data" class="something">
-          <a routerLink="/pets/{{pet.id}}">
-            <div class="module">
-              <img *ngIf="pet.imageUrl" [src]=pet.imageUrl class="card-info-img">
-              <img *ngIf="!pet.imageUrl" class="card-info-img" src="https://via.placeholder.com/150">
-              <p class="card-info-text">Name: {{pet.name}}</p>
-              <p class="card-info-text">Species: {{pet.name}}</p>
-              <p class="card-info-text">Color: {{pet.name}}</p>
-              <p class="card-info-text">Price: {{pet.name}}</p>
-            </div>
-          </a>
-          <button (click)="deletePet(pet.id)" align="right" class="button-close">
-            <i class=ico-times></i>
-          </button>
+        <div matRipple matRippleColor='green'>
+          <div *ngFor="let pet of pageList.data" class="something">
+            <a routerLink="/pets/{{pet.id}}">
+              <div class="module">
+                <img *ngIf="pet.imageUrl" [src]=pet.imageUrl class="card-info-img">
+                <img *ngIf="!pet.imageUrl" class="card-info-img" src="https://via.placeholder.com/150">
+                <p class="card-info-text">Name: {{pet.name}}</p>
+                <p class="card-info-text">Species: {{pet.name}}</p>
+                <p class="card-info-text">Color: {{pet.name}}</p>
+                <p class="card-info-text">Price: {{pet.name}}</p>
+              </div>
+            </a>
+
+            <button mat-button (click)="deletePet(pet.id)" align="right" class="button-close">
+              <i class=ico-times></i>
+            </button>
+
+
+          </div>
         </div>
       </div>
       <div class="page-controller">
