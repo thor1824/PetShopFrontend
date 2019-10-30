@@ -3,6 +3,7 @@
 .topnav {
   overflow: hidden;
   background-color: #333;
+  box-shadow: 0 3px 7px rgba(0,0,0,50);
 }
 
 /* Navbar links */
@@ -48,6 +49,7 @@ nav a.active {
   vertical-align: super;
   display: inline-block;
   alignment: right;
+  outline: none;
 }
 
 .search-bar {
@@ -59,4 +61,5 @@ nav a.active {
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 15px;
+  outline: none;
 }

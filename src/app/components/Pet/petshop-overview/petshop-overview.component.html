@@ -1,6 +1,6 @@
 <div class="main-content">
   <div class="subcontent">
-    <div class="mat-headline"><h2 class="bob">Pets</h2></div>
+    <div class="mat-headline"><h2 class="overview-headline">Pets</h2></div>
     <div *ngIf="pageList" class="grid-container">
       <div class="pet-overview-toolbar">
         <div class="pet-overview-tool">
@@ -11,24 +11,24 @@
       </div>
 
       <div class="grid">
-        <div matRipple matRippleColor='green'>
-          <div *ngFor="let pet of pageList.data" class="something">
-            <a routerLink="/pets/{{pet.id}}">
-              <div class="module">
-                <img *ngIf="pet.imageUrl" [src]=pet.imageUrl class="card-info-img">
-                <img *ngIf="!pet.imageUrl" class="card-info-img" src="https://via.placeholder.com/150">
-                <p class="card-info-text">Name: {{pet.name}}</p>
-                <p class="card-info-text">Species: {{pet.name}}</p>
-                <p class="card-info-text">Color: {{pet.name}}</p>
-                <p class="card-info-text">Price: {{pet.name}}</p>
-              </div>
-            </a>
 
-            <button mat-button (click)="deletePet(pet.id)" align="right" class="button-close">
-              <i class=ico-times></i>
-            </button>
-
-
+        <div *ngFor="let pet of pageList.data" class="something">
+          <a routerLink="/pets/{{pet.id}}">
+            <div class="module">
+              <img *ngIf="pet.imageUrl" [src]=pet.imageUrl class="card-info-img">
+              <img *ngIf="!pet.imageUrl" class="card-info-img" src="https://via.placeholder.com/150">
+              <p class="card-info-text"><span class="span-detail">Name:</span> {{pet.name}}</p>
+              <p class="card-info-text"><span class="span-detail">Species:</span> {{pet.pType}}</p>
+              <p class="card-info-text"><span class="span-detail">Color:</span> {{pet.color}}</p>
+              <p class="card-info-text"><span class="span-detail">Price:</span> {{pet.price}}</p>
+            </div>
+          </a>
+          <div class="button-ripple">
+            <div matRipple matRippleColor='rgba(255, 255, 255, 0.35)'>
+              <button (click)="openDialog(pet)" align="right" class="button-close" mat-button>
+                <i class=ico-times></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

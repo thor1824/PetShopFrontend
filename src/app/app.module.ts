@@ -20,6 +20,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PetCreateComponent} from './components/Pet/pet-create/pet-create.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserLoginComponent } from './components/NamePending/user-login/user-login.component';
+import { OwnerOverviewComponent } from './components/Owner/owner-overview/owner-overview.component';
+import { OwnerDetailComponent } from './components/Owner/owner-detail/owner-detail.component';
+import { OwnerCreateComponent } from './components/Owner/owner-create/owner-create.component';
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { HttpClientModule } from '@angular/common/http';
     PetshopOverviewComponent,
     PetDetailComponent,
     ConfirmationDialogComponent,
-    PetCreateComponent
+    PetCreateComponent,
+    UserLoginComponent,
+    OwnerOverviewComponent,
+    OwnerDetailComponent,
+    OwnerCreateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule, MatButtonModule, BrowserAnimationsModule, MatNativeDateModule, MatDatepickerModule, MatIconModule, MatInputModule, MatPaginatorModule, ReactiveFormsModule, HttpClientModule, MatRippleModule],
   entryComponents: [ConfirmationDialogComponent],

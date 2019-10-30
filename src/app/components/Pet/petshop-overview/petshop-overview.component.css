@@ -77,9 +77,15 @@
   margin-right: 16px;
 }
 
-.something a, .button-close {
+.something a, .button-ripple {
   grid-column: 1;
   grid-row: 1;
+}
+
+.button-ripple {
+  margin-left: 411px;
+  height: 30px;
+  width: 30px;
 }
 
 .something {
@@ -91,7 +97,7 @@
   outline: none;
   background-color: transparent;
   border-color: transparent;
-  margin-left: 410px;
+  float: right;
   height: 30px;
   width: 30px;
   min-width: 30px;
@@ -124,8 +130,9 @@
   text-decoration: none;
 }
 
-.bob {
+.overview-headline {
   margin-left: 10px;
+  color: whitesmoke;
 }
 
 .tool {
@@ -136,6 +143,12 @@
   margin: auto;
 
 
+}
+
+.span-detail {
+  min-width: 75px;
+  width: 75px;
+  display: inline-block;
 }
 
 

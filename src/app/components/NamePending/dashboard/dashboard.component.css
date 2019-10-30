@@ -25,12 +25,11 @@ h3 {
 }
 
 h4 {
-  position: relative;
 }
 
 .sub-content {
   width: 90%;
-  
+
   background-color: #333333;
   height: 800px;
 

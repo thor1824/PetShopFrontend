@@ -1,37 +1,38 @@
-<div class="main-content" *ngIf="placeholderImg">
+<div *ngIf="placeholderImg" class="main-content">
 
-  <div class="pet-detail-card" >
+  <div class="pet-detail-card">
     <h2>Create New Pet</h2>
     <div [formGroup]="newPetForm">
       <div class="pet-detail-img">
         <img [src]="placeholderImg" align="left" class="card-info-img">
         <div class="pet-detail-url" valign="bottom">
           <label class="lbl-static">ImageUrl:</label>
-          <input class="input-txt"  placeholder="image url" value=""  formControlName="imageUrl" required/>
+          <input class="input-txt" formControlName="imageUrl" placeholder="image url" required value=""/>
         </div>
       </div>
       <div class="txt-input-box">
         <div class="pet-detail">
           <label class="lbl-static">Name:</label>
-          <input class="input-txt"  placeholder="name"  formControlName="name"/>
+          <input class="input-txt" formControlName="name" placeholder="name"/>
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Species:</label>
-          <input class="input-txt"  placeholder="Species" formControlName="species"/>
+          <input class="input-txt" formControlName="species" placeholder="Species"/>
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Color:</label>
-          <input class="input-txt"  placeholder="Color" formControlName="color"/>
+          <input class="input-txt" formControlName="color" placeholder="Color"/>
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Price:</label>
-          <input class="input-txt"  placeholder="Price" formControlName="price"/>
+          <input class="input-txt" formControlName="price" placeholder="Price"/>
         </div>
       </div>
       <div class="pet-detail">
         <label class="lbl-static-date">Birthday:</label>
         <div class="pet-detail-date">
-          <input matInput [matDatepicker]="picker" class="input-date" placeholder="Birthday" formControlName="birthDate">
+          <input [matDatepicker]="picker" class="input-date" formControlName="birthDate" matInput
+                 placeholder="Birthday">
           <mat-datepicker-toggle [for]="picker" matSuffix>
             <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
           </mat-datepicker-toggle>
@@ -41,7 +42,8 @@
       <div class="pet-detail">
         <label class="lbl-static-date">Sold Date:</label>
         <div class="pet-detail-date">
-          <input matInput [matDatepicker]="picker2" class="input-date" placeholder="Sold Date">
+          <input [matDatepicker]="picker2" class="input-date" formControlName="birthDate" matInput
+                 placeholder="Sold Date">
           <mat-datepicker-toggle [for]="picker2" matSuffix>
             <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
           </mat-datepicker-toggle>
@@ -52,7 +54,7 @@
   </div>
   <div class="button-box">
     <button (click)="cancel()" mat-button>Cancel</button>
-    <button [disabled]="!newPetForm.valid" (click)="createNewPet()" mat-button>Add</button>
+    <button (click)="openDialog()" [disabled]="!newPetForm.valid" mat-button>Add</button>
   </div>
 </div>
 

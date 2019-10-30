@@ -2,7 +2,7 @@
   <nav class="topnav">
     <a routerLink="/dashboard"><img class ="logo" src="assets/placeholder.com-logo3.png" width="auto" height="30"></a>
     <div class="search-bar-container">
-      <input (keydown.enter)="onKeydown($event)"  class="search-bar" placeholder="Seach.."/>
+      <input (keydown.enter)="onKeydown($event)" [(ngModel)]="searchText" class="search-bar" placeholder="Seach.."/>
     </div>
     <a class="entity-route" routerLink="/pets">login</a>
     <a class="entity-route" routerLink="/pets">Owners</a>

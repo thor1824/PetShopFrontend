@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./petshop-header.component.css']
 })
 export class PetshopHeaderComponent implements OnInit {
+  searchText: string;
 
   constructor() { }
 
@@ -14,7 +15,7 @@ export class PetshopHeaderComponent implements OnInit {
 
   onKeydown(event) {
     if (event.key === 'Enter') {
-      console.log('seach');
+      console.log(this.searchText);
     }
   }
 }
