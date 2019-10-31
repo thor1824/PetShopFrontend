@@ -10,7 +10,9 @@ export class ErrorDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ErrorDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public message: string) { }
+    @Inject(MAT_DIALOG_DATA) public message: string) {
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }

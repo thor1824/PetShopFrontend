@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import {PetService} from '../../../Services/pet.service';
-import {ConfirmationDialogComponent} from '../../shared/confirmation-dialog/confirmation-dialog.component';
-import {MatDialog} from '@angular/material';
+import {DialogService} from '../../../Services/dialog.service';
 
 @Component({
   selector: 'app-pet-create',
@@ -13,18 +11,19 @@ import {MatDialog} from '@angular/material';
 })
 
 
-
 export class PetCreateComponent implements OnInit {
   placeholderImg;
   newPetForm = this.fb.group({
-    imageUrl: ['', Validators.required],
+    imageUrl: [''],
     name: ['', Validators.required],
     species: ['', Validators.required],
     color: ['', Validators.required],
     price: ['', Validators.required],
     birthDate: ['', Validators.required],
   });
-  constructor(private fb: FormBuilder, private location: Location, private petService: PetService,  public dialog: MatDialog) { }
+
+  constructor(private fb: FormBuilder, private location: Location, private petService: PetService, private ds: DialogService) {
+  }
 
   ngOnInit() {
     this.placeholderImg = 'https://via.placeholder.com/150';
@@ -38,14 +37,11 @@ export class PetCreateComponent implements OnInit {
     this.location.back();
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '350px', data: 'Do you want to Add Entity?'
-    });
-    dialogRef.afterClosed().subscribe(result => {
+  openAddDialog(): void {
+    this.ds.openConfirmationDialog('Do you want to Add ' + this.newPetForm.controls.name.value + '?').afterClosed().subscribe(result => {
       if (result) {
-        console.log('Yes clicked');
         this.createNewPet();
+        this.location.back();
       }
     });
   }

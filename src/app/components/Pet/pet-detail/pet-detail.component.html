@@ -54,7 +54,8 @@
       <div class="pet-detail">
         <label class="lbl-static-date">Sold Date:</label>
         <div *ngIf="edit" class="pet-detail-date">
-          <input [matDatepicker]="picker2"  class="input-date" formControlName="soldDate" matInput placeholder="Sold Date"
+          <input [matDatepicker]="picker2" class="input-date" formControlName="soldDate" matInput
+                 placeholder="Sold Date"
                  value="{{pet.soldDate}}">
           <mat-datepicker-toggle [for]="picker2" matSuffix>
             <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Pet} from '../../../Shared/Entity/Pet';
+import {Component, OnInit} from '@angular/core';
 import {UserLoginComponent} from '../user-login/user-login.component';
 import {MatDialog} from '@angular/material';
 
@@ -11,7 +10,8 @@ import {MatDialog} from '@angular/material';
 export class PetshopHeaderComponent implements OnInit {
   searchText: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
   }

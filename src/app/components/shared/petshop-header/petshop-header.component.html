@@ -1,10 +1,10 @@
 <div class="header-box">
   <nav class="topnav">
-    <a routerLink="/dashboard"><img class ="logo" src="assets/placeholder.com-logo3.png" width="auto" height="30"></a>
+    <a routerLink="/dashboard"><img class="logo" height="30" src="assets/placeholder.com-logo3.png" width="auto"></a>
     <div class="search-bar-container">
       <input (keydown.enter)="onKeydown($event)" [(ngModel)]="searchText" class="search-bar" placeholder="Seach.."/>
     </div>
-    <a class="entity-route" (click)="openLoginWindow()">login</a>
+    <a (click)="openLoginWindow()" class="entity-route">login</a>
     <a class="entity-route" routerLink="/owners">Owners</a>
     <a class="entity-route" routerLink="/pets">Pets</a>
   </nav>

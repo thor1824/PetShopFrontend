@@ -5,19 +5,21 @@
   box-shadow: 2px 2px 4px 0px black;
 
 }
+
 .welcome-message {
   padding: 20px;
   padding-left: 30px;
   vertical-align: top;
 }
 
-.welcome-h1, .welcome-h4{
+.welcome-h1, .welcome-h4 {
   color: white;
 }
 
 .welcome-h1 {
   margin-bottom: 3px;
 }
+
 .welcome-h4 {
   margin-top: 3px;
   margin-left: 10px;
