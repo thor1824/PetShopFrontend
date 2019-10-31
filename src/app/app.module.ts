@@ -24,6 +24,7 @@ import { UserLoginComponent } from './components/shared/user-login/user-login.co
 import { OwnerOverviewComponent } from './components/Owner/owner-overview/owner-overview.component';
 import { OwnerDetailComponent } from './components/Owner/owner-detail/owner-detail.component';
 import { OwnerCreateComponent } from './components/Owner/owner-create/owner-create.component';
+import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 
 
 @NgModule({
@@ -39,12 +40,33 @@ import { OwnerCreateComponent } from './components/Owner/owner-create/owner-crea
     UserLoginComponent,
     OwnerOverviewComponent,
     OwnerDetailComponent,
-    OwnerCreateComponent
+    OwnerCreateComponent,
+    ErrorDialogComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule, MatButtonModule, BrowserAnimationsModule, MatNativeDateModule, MatDatepickerModule, MatIconModule, MatInputModule, MatPaginatorModule, ReactiveFormsModule, HttpClientModule, MatRippleModule],
-  entryComponents: [ConfirmationDialogComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatInputModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatRippleModule
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent,
+    ErrorDialogComponent
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule
 {

@@ -28,6 +28,7 @@ export class PetDetailComponent implements OnInit
     birthDate: ['', Validators.required],
     soldDate: ['', Validators.required]
   });
+
   constructor(private petService: PetService, private route: ActivatedRoute, private location: Location, public dialog: MatDialog, private fb: FormBuilder)
   {
   }
@@ -75,9 +76,11 @@ export class PetDetailComponent implements OnInit
     });
   }
 
-  saveChanges(): void {
+  saveChanges(): void
+  {
     if (this.updatePetForm.valid) {
-      this.petService.editPet(this.updatePetForm.value).subscribe(result => {
+      this.petService.editPet(this.updatePetForm.value).subscribe(result =>
+      {
         console.log(result);
         this.getPet();
       });
