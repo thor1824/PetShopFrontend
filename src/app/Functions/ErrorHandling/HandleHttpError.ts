@@ -1,6 +1,6 @@
 import {HttpErrorResponse} from '@angular/common/http';
 import {throwError} from 'rxjs';
-import {openErrorDialog} from './OpenErrorDialog';
+import {openErrorDialog} from '../Dialog/OpenErrorDialog';
 import {MatDialog} from '@angular/material';
 
 export function handleHttpError(error: HttpErrorResponse, matDialog: MatDialog) {

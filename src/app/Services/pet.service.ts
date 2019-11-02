@@ -3,13 +3,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {handleHttpError} from '../functions/HandleHttpError';
+import {handleHttpError} from '../Functions/ErrorHandling/HandleHttpError';
 
-import {Pet} from '../model/Pet';
+import {Pet} from '../Model/Pet';
 import {environment} from '../../environments/environment';
-import {PageList} from 'src/app/model/PageList';
+import {PageList} from 'src/app/Model/PageList';
 import {AuthenticationService} from './authentication.service';
-import {Globals} from '../model/Global';
+import {Globals} from '../Model/Global';
 import {MatDialog} from '@angular/material';
 
 const httpOptions = {

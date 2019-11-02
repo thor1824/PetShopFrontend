@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Owner} from '../model/Owner';
-import {PageList} from '../model/PageList';
+import {Owner} from '../Model/Owner';
+import {PageList} from '../Model/PageList';
 import {catchError} from 'rxjs/operators';
-import {handleHttpError} from '../functions/HandleHttpError';
+import {handleHttpError} from '../Functions/ErrorHandling/HandleHttpError';
 import {MatDialog} from '@angular/material';
 
 @Injectable({

@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Pet} from '../../../model/Pet';
+import {Pet} from '../../../Model/Pet';
 import {PetService} from '../../../Services/pet.service';
-import {PageList} from '../../../model/PageList';
+import {PageList} from '../../../Model/PageList';
 import {MatDialog} from '@angular/material';
-import {openConfirmationDialog} from '../../../functions/OpenConfirmationDialog';
+import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmationDialog';
 
 @Component({
   selector: 'app-pet-overview', templateUrl: './petshop-overview.component.html', styleUrls: ['./petshop-overview.component.css'],

@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {PetService} from '../../../Services/pet.service';
-import {Pet} from '../../../model/Pet';
+import {Pet} from '../../../Model/Pet';
 import {FormBuilder, Validators} from '@angular/forms';
-import {openConfirmationDialog} from '../../../functions/OpenConfirmationDialog';
+import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmationDialog';
 import {MatDialog} from '@angular/material';
 
 @Component({
@@ -42,7 +42,7 @@ export class PetDetailComponent implements OnInit {
         id: pet.id,
         name: pet.name,
         imageUrl: pet.imageUrl,
-        species: pet.pType,
+        species: pet.species,
         color: pet.color,
         price: pet.price,
         birthDate: pet.birthDate,

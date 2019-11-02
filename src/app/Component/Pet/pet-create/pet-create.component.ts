@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import {PetService} from '../../../Services/pet.service';
-import {openConfirmationDialog} from '../../../functions/OpenConfirmationDialog';
+import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmationDialog';
 import {MatDialog} from '@angular/material';
 
 @Component({

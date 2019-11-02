@@ -1,5 +1,5 @@
 import {MatDialog} from '@angular/material';
-import {UserLoginComponent} from '../components/shared/user-login/user-login.component';
+import {UserLoginComponent} from '../../Component/shared/user-login/user-login.component';
 
 
 export function openLoginWindow(dialog: MatDialog): void {

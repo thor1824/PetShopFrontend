@@ -13,20 +13,20 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 
 import {AppComponent} from './app.component';
-import {DashboardComponent} from './components/shared/dashboard/dashboard.component';
+import {DashboardComponent} from './Component/shared/dashboard/dashboard.component';
 import {AppRoutingModule} from './app-routing.module';
-import {PetshopHeaderComponent} from './components/shared/petshop-header/petshop-header.component';
-import {PetshopFooterComponent} from './components/shared/petshop-footer/petshop-footer.component';
-import {PetshopOverviewComponent} from './components/Pet/petshop-overview/petshop-overview.component';
-import {PetDetailComponent} from './components/Pet/pet-detail/pet-detail.component';
-import {ConfirmationDialogComponent} from './components/shared/confirmation-dialog/confirmation-dialog.component';
-import {PetCreateComponent} from './components/Pet/pet-create/pet-create.component';
-import {UserLoginComponent} from './components/shared/user-login/user-login.component';
-import {OwnerOverviewComponent} from './components/Owner/owner-overview/owner-overview.component';
-import {OwnerDetailComponent} from './components/Owner/owner-detail/owner-detail.component';
-import {OwnerCreateComponent} from './components/Owner/owner-create/owner-create.component';
-import {ErrorDialogComponent} from './components/shared/error-dialog/error-dialog.component';
-import { Globals } from './model/Global';
+import {PetshopHeaderComponent} from './Component/shared/petshop-header/petshop-header.component';
+import {PetshopFooterComponent} from './Component/shared/petshop-footer/petshop-footer.component';
+import {PetshopOverviewComponent} from './Component/Pet/petshop-overview/petshop-overview.component';
+import {PetDetailComponent} from './Component/Pet/pet-detail/pet-detail.component';
+import {ConfirmationDialogComponent} from './Component/shared/confirmation-dialog/confirmation-dialog.component';
+import {PetCreateComponent} from './Component/Pet/pet-create/pet-create.component';
+import {UserLoginComponent} from './Component/shared/user-login/user-login.component';
+import {OwnerOverviewComponent} from './Component/Owner/owner-overview/owner-overview.component';
+import {OwnerDetailComponent} from './Component/Owner/owner-detail/owner-detail.component';
+import {OwnerCreateComponent} from './Component/Owner/owner-create/owner-create.component';
+import {ErrorDialogComponent} from './Component/shared/error-dialog/error-dialog.component';
+import { Globals } from './Model/Global';
 
 
 @NgModule({

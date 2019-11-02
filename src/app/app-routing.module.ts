@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {DashboardComponent} from './components/shared/dashboard/dashboard.component';
-import {PetshopOverviewComponent} from './components/Pet/petshop-overview/petshop-overview.component';
-import {PetDetailComponent} from './components/Pet/pet-detail/pet-detail.component';
-import {PetCreateComponent} from './components/Pet/pet-create/pet-create.component';
-import {UserLoginComponent} from './components/shared/user-login/user-login.component';
-import {OwnerOverviewComponent} from './components/Owner/owner-overview/owner-overview.component';
-import {OwnerDetailComponent} from './components/Owner/owner-detail/owner-detail.component';
-import {OwnerCreateComponent} from './components/Owner/owner-create/owner-create.component';
-import {AuthGuard} from './guard/auth.guard';
+import {DashboardComponent} from './Component/shared/dashboard/dashboard.component';
+import {PetshopOverviewComponent} from './Component/Pet/petshop-overview/petshop-overview.component';
+import {PetDetailComponent} from './Component/Pet/pet-detail/pet-detail.component';
+import {PetCreateComponent} from './Component/Pet/pet-create/pet-create.component';
+import {UserLoginComponent} from './Component/shared/user-login/user-login.component';
+import {OwnerOverviewComponent} from './Component/Owner/owner-overview/owner-overview.component';
+import {OwnerDetailComponent} from './Component/Owner/owner-detail/owner-detail.component';
+import {OwnerCreateComponent} from './Component/Owner/owner-create/owner-create.component';
+import {AuthGuard} from './Guard/auth.guard';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},

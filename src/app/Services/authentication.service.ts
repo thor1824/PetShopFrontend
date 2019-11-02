@@ -3,9 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
-import {Globals} from '../model/Global';
+import {Globals} from '../Model/Global';
 import {MatDialog} from '@angular/material';
-import {handleHttpError} from '../functions/HandleHttpError';
+import {handleHttpError} from '../Functions/ErrorHandling/HandleHttpError';
 
 @Injectable({
   providedIn: 'root'

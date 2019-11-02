@@ -8,6 +8,6 @@ export interface Pet {
   soldDate: Date;
   color: string;
   price: number;
-  pType: number;
+  species: string;
   previousOwners?: Owner[];
 }

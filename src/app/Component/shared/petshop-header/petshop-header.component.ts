@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../../Services/authentication.service';
-import {Globals} from '../../../model/Global';
+import {Globals} from '../../../Model/Global';
 import {MatDialog} from '@angular/material';
-import {openLoginWindow} from 'src/app/functions/OpenLoginDialog';
+import {openLoginWindow} from 'src/app/Functions/Dialog/OpenLoginDialog';
 
 @Component({
   selector: 'app-petshop-header',

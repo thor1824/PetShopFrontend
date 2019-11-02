@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import {AuthenticationService} from '../Services/authentication.service';
 import {MatDialog} from '@angular/material';
-import {openLoginWindow} from '../functions/OpenLoginDialog';
+import {openLoginWindow} from '../Functions/Dialog/OpenLoginDialog';
 
 @Injectable({
   providedIn: 'root'
