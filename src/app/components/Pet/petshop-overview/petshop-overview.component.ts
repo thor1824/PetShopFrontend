@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Pet} from '../../../Shared/Entity/Pet';
+import {Pet} from '../../../model/Pet';
 import {PetService} from '../../../Services/pet.service';
-import {PageList} from '../../../Shared/Entity/PageList';
-import {DialogService} from '../../../Services/dialog.service';
+import {PageList} from '../../../model/PageList';
+import {MatDialog} from '@angular/material';
+import {openConfirmationDialog} from '../../../functions/OpenConfirmationDialog';
 
 @Component({
   selector: 'app-pet-overview', templateUrl: './petshop-overview.component.html', styleUrls: ['./petshop-overview.component.css'],
@@ -10,7 +11,7 @@ import {DialogService} from '../../../Services/dialog.service';
 
 export class PetshopOverviewComponent implements OnInit {
 
-  constructor(private petService: PetService, private ds: DialogService) {
+  constructor(private petService: PetService, private matDialog: MatDialog) {
   }
 
   pageList: PageList<Pet>;
@@ -34,7 +35,8 @@ export class PetshopOverviewComponent implements OnInit {
   }
 
   openDialog(pet: Pet): void {
-    this.ds.openConfirmationDialog('Do you wish to delete ' + pet.name + '?').afterClosed().subscribe(result => {
+    openConfirmationDialog('Do you wish to delete ' + pet.name + '?', this.matDialog)
+      .afterClosed().subscribe(result => {
       if (result) {
         console.log('Yes clicked');
         this.deletePet(pet.id);

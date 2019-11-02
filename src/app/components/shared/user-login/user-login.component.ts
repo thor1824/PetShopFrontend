@@ -1,5 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {AuthenticationService} from '../../../Services/authentication.service';
 
 @Component({
   selector: 'app-user-login',
@@ -7,13 +8,31 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
+  username: string;
+  password: string;
+  isLoggedIn = false;
+
   constructor(
     public dialogRef: MatDialogRef<UserLoginComponent>,
-    @Inject(MAT_DIALOG_DATA) public message: string) {
+    private as: AuthenticationService,
+    @Inject(MAT_DIALOG_DATA) public message: string,
+  ) {
   }
 
-  onNoClick(): void {
+  cancel(): void {
     this.dialogRef.close();
+  }
+
+
+  login() {
+    this.as.login(this.username, this.password).subscribe((result) => {
+      if (result) {
+        console.log('check');
+      } else {
+        console.log('fail');
+      }
+      this.dialogRef.close();
+    });
   }
 }
 

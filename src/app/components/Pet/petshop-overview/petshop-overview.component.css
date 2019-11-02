@@ -10,7 +10,7 @@
   content: "\2716";
   text-align: center;
   font-style: normal;
-  color: white;
+  color: #e3dac9;
 }
 
 .grid-container {
@@ -33,20 +33,20 @@
 
 .paginator{
   background-color: transparent;
-  color: white;
+  color: #e3dac9;
 }
 .mat-select-value{
-  color:white;
+  color:#e3dac9;
 }
 .mat-select-arrow {
-  color:white;
+  color:#e3dac9;
 }
 
 .module {
   background-color: #333;
   vertical-align: top;
   display: inline-block;
-  color: #f2f2f2;
+  color: #e3dac9;
   padding: 14px 16px;
   text-decoration: none;
   text-align: left;
@@ -138,14 +138,14 @@
 
 .overview-headline {
   margin-left: 10px;
-  color: whitesmoke;
+  color: #e3dac9;
 }
 
 .tool {
   padding-top: 5px;
   align: center;
   height: 100%;
-  color: #eeeeee;
+  color: #e3dac9;
   margin: auto;
 
 

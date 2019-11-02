@@ -1,10 +1,10 @@
 <h2 align="center" style="color:whitesmoke">Login</h2>
 <div align="center" mat-dialog-content>
-  <input class="input-txt" placeholder="User Name">
-  <input class="input-txt" placeholder="Password" type="password"/>
+  <input class="input-txt" placeholder="Username" [(ngModel)]="username">
+  <input class="input-txt" placeholder="Password" [(ngModel)]="password" type="password"/>
 </div>
 <div align="center" mat-dialog-actions>
-  <button [mat-dialog-close]="true" cdkFocusInitial mat-button>Login</button>
-  <button (click)="onNoClick()" mat-button>Cancel</button>
+  <button (click)="login()" cdkFocusInitial mat-button>Login</button>
+  <button (click)="cancel()" mat-button>Cancel</button>
 </div>
 

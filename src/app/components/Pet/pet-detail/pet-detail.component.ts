@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {PetService} from '../../../Services/pet.service';
-import {Pet} from '../../../Shared/Entity/Pet';
+import {Pet} from '../../../model/Pet';
 import {FormBuilder, Validators} from '@angular/forms';
-import {DialogService} from '../../../Services/dialog.service';
+import {openConfirmationDialog} from '../../../functions/OpenConfirmationDialog';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-pet-detail', templateUrl: './pet-detail.component.html', styleUrls: ['./pet-detail.component.css']
@@ -13,7 +14,6 @@ import {DialogService} from '../../../Services/dialog.service';
 export class PetDetailComponent implements OnInit {
   edit = false;
   pet: Pet;
-  title = 'angular-confirmation-dialog';
 
   updatePetForm = this.fb.group({
     id: ['', Validators.required],
@@ -31,7 +31,7 @@ export class PetDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private fb: FormBuilder,
-    private win: DialogService
+    private matDialog: MatDialog
   ) {
   }
 
@@ -61,7 +61,7 @@ export class PetDetailComponent implements OnInit {
   }
 
   openEditDialog(): void {
-    this.win.openConfirmationDialog('Do you want to save Changes?').afterClosed().subscribe(result => {
+    openConfirmationDialog('Do you want to save Changes?', this.matDialog).afterClosed().subscribe(result => {
       if (result) {
         this.saveChanges();
       }
@@ -69,15 +69,11 @@ export class PetDetailComponent implements OnInit {
   }
 
   saveChanges(): void {
-    if (this.updatePetForm.valid) {
       this.petService.editPet(this.updatePetForm.value).subscribe(result => {
         console.log(result);
         this.getPet();
       });
       this.edit = false;
-    } else {
-      this.win.openErrorDialog(400, 'something went wrong, Forms not valid');
-    }
   }
 
   ngOnInit() {

@@ -4,9 +4,23 @@
     <div class="search-bar-container">
       <input (keydown.enter)="onKeydown($event)" [(ngModel)]="searchText" class="search-bar" placeholder="Seach.."/>
     </div>
-    <a (click)="openLoginWindow()" class="entity-route">login</a>
-    <a class="entity-route" routerLink="/owners">Owners</a>
-    <a class="entity-route" routerLink="/pets">Pets</a>
+    <button mat-button (click)="openLoginWindow()" class="entity-route" *ngIf="!global.loggedIn">Sign In</button>
+    <button mat-button (click)="toggleUsercard()" class="entity-route" *ngIf="global.loggedIn">User<img class="smalluser" src="http://oakclifffilmfestival.com/assets/placeholder-user.png"/></button>
+    <button mat-button class="entity-route" routerLink="/owners">Owners</button>
+    <button mat-button class="entity-route" routerLink="/pets">Pets</button>
   </nav>
+  <div class="userCard" *ngIf="test">
+    <div class="userCard-img-container" align="center">
+      <img class="userCard-img" src="http://oakclifffilmfestival.com/assets/placeholder-user.png"/>
+      <label class="userCard-username">{{username}}</label>
+      <button mat-button class="userCard-btn-profile">Profile</button>
+    </div>
+    <div class="userCard-logout-container" align="center">
+      <button mat-button class="userCard-btn-logout" (click)="logout()">Log Out</button>
+    </div>
+    <div class="container-bottom">
+
+    </div>
+  </div>
 
 </div>

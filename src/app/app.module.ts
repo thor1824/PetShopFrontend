@@ -26,6 +26,7 @@ import {OwnerOverviewComponent} from './components/Owner/owner-overview/owner-ov
 import {OwnerDetailComponent} from './components/Owner/owner-detail/owner-detail.component';
 import {OwnerCreateComponent} from './components/Owner/owner-create/owner-create.component';
 import {ErrorDialogComponent} from './components/shared/error-dialog/error-dialog.component';
+import { Globals } from './model/Global';
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import {ErrorDialogComponent} from './components/shared/error-dialog/error-dialo
     ConfirmationDialogComponent,
     ErrorDialogComponent
   ],
-  providers: [],
+  providers: [
+    Globals
+  ],
   bootstrap: [
     AppComponent
   ]

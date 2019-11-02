@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {UserLoginComponent} from '../user-login/user-login.component';
+import {AuthenticationService} from '../../../Services/authentication.service';
+import {Globals} from '../../../model/Global';
 import {MatDialog} from '@angular/material';
+import {openLoginWindow} from 'src/app/functions/OpenLoginDialog';
 
 @Component({
   selector: 'app-petshop-header',
@@ -9,8 +11,10 @@ import {MatDialog} from '@angular/material';
 })
 export class PetshopHeaderComponent implements OnInit {
   searchText: string;
+  username = 'Capt_Lowkey';
+  test: boolean;
 
-  constructor(public dialog: MatDialog) {
+  constructor(private as: AuthenticationService, public global: Globals, private matDialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -23,14 +27,19 @@ export class PetshopHeaderComponent implements OnInit {
   }
 
   openLoginWindow() {
-    const dialogRef = this.dialog.open(UserLoginComponent, {
-      width: '350px', data: 'login'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Yes clicked');
-      }
-    });
+    openLoginWindow(this.matDialog);
   }
 
+  logout() {
+    this.as.logout();
+    this.toggleUsercard();
+  }
+
+  toggleUsercard() {
+    if (this.test) {
+      this.test = false;
+    } else {
+      this.test = true;
+    }
+  }
 }

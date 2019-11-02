@@ -8,13 +8,13 @@ label {
 }
 
 h2 {
-  color: white;
+  color: #e3dac9;
 }
 
 button {
   margin-right: 10px;
   font-family: Arial;
-  background-color: #eee;
+  background-color: #e3dac9;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -35,7 +35,7 @@ button:disabled {
 }
 
 span {
-  color: white;
+  color: #e3dac9;
 }
 
 .button-box {
@@ -79,7 +79,7 @@ span {
   border-style: none;
   cursor: text;
   outline: none;
-  color: #eeeeee;
+  color: #e3dac9;
   width: 60%;
   margin-bottom: 4px;
 }
@@ -92,7 +92,7 @@ span {
   border-style: none;
   cursor: text;
   outline: none;
-  color: #eeeeee;
+  color: #e3dac9;
   margin-bottom: 4px;
   width: 209px;
 }

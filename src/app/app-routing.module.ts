@@ -9,16 +9,17 @@ import {UserLoginComponent} from './components/shared/user-login/user-login.comp
 import {OwnerOverviewComponent} from './components/Owner/owner-overview/owner-overview.component';
 import {OwnerDetailComponent} from './components/Owner/owner-detail/owner-detail.component';
 import {OwnerCreateComponent} from './components/Owner/owner-create/owner-create.component';
+import {AuthGuard} from './guard/auth.guard';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'pets', component: PetshopOverviewComponent},
-  {path: 'pets/:id', component: PetDetailComponent},
-  {path: 'create/pet', component: PetCreateComponent},
+  {path: 'pets', component: PetshopOverviewComponent, canActivate: [AuthGuard]},
+  {path: 'pets/:id', component: PetDetailComponent, canActivate: [AuthGuard]},
+  {path: 'create/pet', component: PetCreateComponent, canActivate: [AuthGuard]},
   {path: 'login', component: UserLoginComponent},
-  {path: 'owners', component: OwnerOverviewComponent},
-  {path: 'owners/:id', component: OwnerDetailComponent},
-  {path: 'create/owner', component: OwnerCreateComponent},
+  {path: 'owners', component: OwnerOverviewComponent, canActivate: [AuthGuard]},
+  {path: 'owners/:id', component: OwnerDetailComponent, canActivate: [AuthGuard]},
+  {path: 'create/owner', component: OwnerCreateComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 
