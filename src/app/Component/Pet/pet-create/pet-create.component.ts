@@ -4,6 +4,7 @@ import {Location} from '@angular/common';
 import {PetService} from '../../../Services/pet.service';
 import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmationDialog';
 import {MatDialog} from '@angular/material';
+import {Species} from '../../../Model/Species';
 
 @Component({
   selector: 'app-pet-create',
@@ -22,6 +23,11 @@ export class PetCreateComponent implements OnInit {
     price: ['', Validators.required],
     birthDate: ['', Validators.required],
   });
+  species: Species[] = [
+    {id: 1, name: 'Ged'},
+    {id: 2, name: 'Kat'},
+    {id: 3, name: 'Hund'}
+  ];
 
   constructor(private fb: FormBuilder, private location: Location, private petService: PetService, private matDialog: MatDialog) {
   }

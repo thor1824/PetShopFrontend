@@ -155,3 +155,21 @@ span {
 .pet-detail-url {
 
 }
+.input-selector{
+  clear: both;
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+  background-color: gray;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  color: lightgray;
+  width: 61.5%;
+  margin-bottom: 4px;
+}
+option:not(:first-of-type) {
+  margin: 5px;
+  color: #e3dac9;
+}
+

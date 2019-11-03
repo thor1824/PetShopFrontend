@@ -9,8 +9,8 @@ import {Pet} from '../Model/Pet';
 import {environment} from '../../environments/environment';
 import {PageList} from 'src/app/Model/PageList';
 import {AuthenticationService} from './authentication.service';
-import {Globals} from '../Model/Global';
 import {MatDialog} from '@angular/material';
+import {StateService} from './state.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -28,45 +28,48 @@ export class PetService {
   constructor(
     private http: HttpClient,
     private authenticationService: AuthenticationService,
-    public globals: Globals,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private stateService: StateService
   ) {
   }
 
   getPets(pageIndex: number, pageSize: number): Observable<PageList<Pet>> {
-
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
 
     return this.http.get<PageList<Pet>>(this.PET_API_URL + '?pageIndex=' + pageIndex + '&pageSize=' + pageSize, httpOptions)
-      .pipe(catchError(error => handleHttpError(error, this.matDialog)));
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
   }
 
   getPet(id: number): Observable<Pet> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
 
-    return this.http.get<Pet>(this.PET_API_URL + '/' + id, httpOptions).pipe(catchError(error => handleHttpError(error, this.matDialog)));
+    return this.http.get<Pet>(this.PET_API_URL + '/' + id, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
   }
 
   deletePet(id: number): Observable<Pet> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
 
-    return this.http.delete<Pet>(this.PET_API_URL + '/' + id, httpOptions).pipe(catchError(error => handleHttpError(error, this.matDialog)));
+    return this.http.delete<Pet>(this.PET_API_URL + '/' + id, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
   }
 
   createPet(pet: Pet): Observable<any> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
 
-    return this.http.post(this.PET_API_URL, pet, httpOptions).pipe(catchError(error => handleHttpError(error, this.matDialog)));
+    return this.http.post(this.PET_API_URL, pet, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
   }
 
   editPet(pet: Pet): Observable<any> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
 
-    return this.http.put(this.PET_API_URL, pet, httpOptions).pipe(catchError(error => handleHttpError(error, this.matDialog)));
+    return this.http.put(this.PET_API_URL, pet, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
   }
 }

@@ -16,8 +16,14 @@
           <input class="input-txt" formControlName="name" placeholder="name"/>
         </div>
         <div class="pet-detail">
-          <label class="lbl-static">Species:</label>
-          <input class="input-txt" formControlName="species" placeholder="Species"/>
+
+            <label class="lbl-static">Species:</label>
+            <select class="input-selector" placeholder="Species" formControlName="species">
+              <option value="">Select Species...</option>
+              <option class="input-options" *ngFor="let item of species" [value]="item.id">
+                {{item.name}}
+              </option>
+            </select>
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Color:</label>

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from '../../../Services/authentication.service';
-import {Globals} from '../../../Model/Global';
+import {StateService} from '../../../Services/state.service';
 import {MatDialog} from '@angular/material';
 import {openLoginWindow} from 'src/app/Functions/Dialog/OpenLoginDialog';
 
@@ -12,9 +11,12 @@ import {openLoginWindow} from 'src/app/Functions/Dialog/OpenLoginDialog';
 export class PetshopHeaderComponent implements OnInit {
   searchText: string;
   username = 'Capt_Lowkey';
-  test: boolean;
+  isLoggedIn: boolean;
+  toggleUserCard: boolean;
 
-  constructor(private as: AuthenticationService, public global: Globals, private matDialog: MatDialog) {
+  constructor(private state: StateService, private matDialog: MatDialog) {
+    state.loggedInStatus$.subscribe(result => this.isLoggedIn = result);
+    state.emit();
   }
 
   ngOnInit() {
@@ -31,15 +33,15 @@ export class PetshopHeaderComponent implements OnInit {
   }
 
   logout() {
-    this.as.logout();
     this.toggleUsercard();
+    this.state.logoutEmit();
   }
 
   toggleUsercard() {
-    if (this.test) {
-      this.test = false;
+    if (this.toggleUserCard) {
+      this.toggleUserCard = false;
     } else {
-      this.test = true;
+      this.toggleUserCard = true;
     }
   }
 }
