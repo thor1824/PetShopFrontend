@@ -20,6 +20,7 @@ import {OwnerCreateComponent} from './Component/Owner/owner-create/owner-create.
 import {ErrorDialogComponent} from './Component/shared/error-dialog/error-dialog.component';
 
 import {MaterialModule} from './material.module';
+import {AuthenticationService} from './Services/authentication.service';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {MaterialModule} from './material.module';
     OwnerOverviewComponent,
     OwnerDetailComponent,
     OwnerCreateComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,11 +46,12 @@ import {MaterialModule} from './material.module';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+
   ],
   entryComponents: [
     ConfirmationDialogComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
   ],
   providers: [
   ],

@@ -16,3 +16,12 @@
 .mat-dialog-container {
   background-color: #333333;
 }
+
+.mat-spinner{
+
+}
+
+.input-container{
+  height: 75px;
+  padding-top: 15px;
+}

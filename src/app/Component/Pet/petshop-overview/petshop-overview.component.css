@@ -74,7 +74,10 @@
 .card-info-img {
   float: left;
   align: left;
+  width: 150px;
+  height: 150px;
   margin-right: 16px;
+  object-fit: cover;
 }
 
 .something a, .button-ripple {

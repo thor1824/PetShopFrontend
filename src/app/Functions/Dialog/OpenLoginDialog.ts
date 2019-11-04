@@ -4,7 +4,7 @@ import {UserLoginComponent} from '../../Component/shared/user-login/user-login.c
 
 export function openLoginWindow(dialog: MatDialog): void {
   const dialogRef = dialog.open(UserLoginComponent, {
-    maxWidth: '350px', data: 'login'
+    width: '350px', height: '260px', data: 'login'
   });
   dialogRef.afterClosed().subscribe(result => {
     if (result) {

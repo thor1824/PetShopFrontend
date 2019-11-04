@@ -1,10 +1,11 @@
 <h2 align="center" style="color:whitesmoke">Login</h2>
-<div align="center" mat-dialog-content>
-  <input class="input-txt" placeholder="Username" [(ngModel)]="username">
-  <input class="input-txt" placeholder="Password" [(ngModel)]="password" type="password"/>
+<div align="center" Class="input-container">
+  <input *ngIf="!loading" [(ngModel)]="username" class="input-txt" placeholder="Username">
+  <input *ngIf="!loading" [(ngModel)]="password" class="input-txt" placeholder="Password" type="password"/>
+  <mat-spinner *ngIf="loading" [diameter]="50"></mat-spinner>
 </div>
 <div align="center" mat-dialog-actions>
-  <button (click)="login()" cdkFocusInitial mat-button>Login</button>
+  <button (click)="login()" [disabled]="loading" cdkFocusInitial mat-button>Login</button>
   <button (click)="cancel()" mat-button>Cancel</button>
 </div>
 

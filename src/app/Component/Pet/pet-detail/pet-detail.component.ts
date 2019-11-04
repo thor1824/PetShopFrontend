@@ -84,9 +84,8 @@ export class PetDetailComponent implements OnInit {
     this.speciesService.getAllSpecies().subscribe((result) => this.species1 = result);
   }
 
-  compareFn(a, b) {
-    console.log(a, b, a && b && a.num === b.num);
-    return a && b && a.num === b.num;
+  compareFn(a: Species, b: Species) {
+    return a.id === b.id;
   }
 
 }

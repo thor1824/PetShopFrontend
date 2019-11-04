@@ -25,8 +25,9 @@
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Species:</label>
-          <select *ngIf="edit" class="input-selector" placeholder="Species" formControlName="species" [compareWith]="compareFn">
-            <option class="input-options" *ngFor="let item of species1" [value]="item">
+          <select *ngIf="edit" [compareWith]="compareFn" class="input-selector" formControlName="species"
+                  placeholder="Species">
+            <option *ngFor="let item of species1" [ngValue]="item" class="input-options">
               {{item.name | titlecase}}
             </option>
           </select>

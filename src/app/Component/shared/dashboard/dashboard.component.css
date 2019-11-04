@@ -24,3 +24,7 @@
   margin-top: 3px;
   margin-left: 10px;
 }
+
+mat-spinner{
+  stroke: rgba(51, 62, 139, 1) !important;
+}

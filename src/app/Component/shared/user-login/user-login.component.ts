@@ -11,6 +11,7 @@ export class UserLoginComponent {
   username: string;
   password: string;
   isLoggedIn = false;
+  loading = false;
 
   constructor(
     public dialogRef: MatDialogRef<UserLoginComponent>,
@@ -25,12 +26,14 @@ export class UserLoginComponent {
 
 
   login() {
+    this.loading = true;
     this.as.login(this.username, this.password).subscribe((result) => {
       if (result) {
         console.log('check');
       } else {
         console.log('fail');
       }
+      this.loading = false;
       this.dialogRef.close();
     });
   }
