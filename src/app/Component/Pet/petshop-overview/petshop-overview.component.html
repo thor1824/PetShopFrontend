@@ -18,7 +18,7 @@
               <img *ngIf="pet.imageUrl" [src]=pet.imageUrl class="card-info-img">
               <img *ngIf="!pet.imageUrl" class="card-info-img" src="https://via.placeholder.com/150">
               <p class="card-info-text"><span class="span-detail">Name:</span> {{pet.name | titlecase}}</p>
-              <p class="card-info-text"><span class="span-detail">Species:</span> {{pet.species | titlecase}}</p>
+              <p class="card-info-text"><span class="span-detail">Species:</span> {{pet.species.name | titlecase}}</p>
               <p class="card-info-text"><span class="span-detail">Color:</span> {{pet.color | titlecase}}</p>
               <p class="card-info-text"><span class="span-detail">Price:</span> {{pet.price}} DKK</p>
             </div>

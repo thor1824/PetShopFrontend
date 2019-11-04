@@ -25,8 +25,14 @@
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Species:</label>
-          <input *ngIf="edit" class="input-txt" formControlName="species" placeholder="Species" value="{{pet.species}}"/>
-          <label *ngIf="!edit" class="lbl-Var">{{pet.species}}</label>
+          <select *ngIf="edit" class="input-selector" placeholder="Species" formControlName="species" [compareWith]="compareFn">
+            <option class="input-options" *ngFor="let item of species1" [value]="item">
+              {{item.name | titlecase}}
+            </option>
+          </select>
+
+
+          <label *ngIf="!edit" class="lbl-Var">{{pet.species.name | titlecase}}</label>
         </div>
         <div class="pet-detail">
           <label class="lbl-static">Color:</label>
@@ -64,8 +70,10 @@
         </div>
         <label *ngIf="!edit" class="lbl-Var">{{pet.soldDate}}</label>
       </div>
+
     </div>
     <div *ngIf="edit===false" class="button-box">
+
       <button (click)="goBack()" mat-button>Back</button>
       <button (click)="enableEdit(true)" mat-button>Edit</button>
     </div>

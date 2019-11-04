@@ -1,4 +1,5 @@
 import {Owner} from './Owner';
+import {Species} from './Species';
 
 export interface Pet {
   id: number;
@@ -8,6 +9,6 @@ export interface Pet {
   soldDate: Date;
   color: string;
   price: number;
-  species: string;
+  species: Species;
   previousOwners?: Owner[];
 }

@@ -6,15 +6,16 @@ import {environment} from '../../environments/environment';
 import {MatDialog} from '@angular/material';
 import {handleHttpError} from '../Functions/ErrorHandling/HandleHttpError';
 import {StateService} from './state.service';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient, private matDialog: MatDialog, private state: StateService) {
+  constructor(private http: HttpClient, private matDialog: MatDialog, private state: StateService, private router: Router) {
     state.loggedInStatus$.subscribe(result => {
-      console.log('haps:' + result)
+      console.log('haps:' + result);
       if (!result) {
         this.logout();
       }
@@ -30,7 +31,9 @@ export class AuthenticationService {
           // store username and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
 
-          this.state.loginEmit()
+          this.state.loginEmit();
+
+          this.router.navigate(['/dashboard']);
           // return true to indicate successful login
           return true;
         } else {
@@ -53,5 +56,6 @@ export class AuthenticationService {
   logout(): void {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    this.router.navigate(['/dashboard']);
   }
 }

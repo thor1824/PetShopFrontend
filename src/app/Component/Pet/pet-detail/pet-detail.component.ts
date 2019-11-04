@@ -6,6 +6,8 @@ import {Pet} from '../../../Model/Pet';
 import {FormBuilder, Validators} from '@angular/forms';
 import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmationDialog';
 import {MatDialog} from '@angular/material';
+import {SpeciesService} from '../../../Services/species.service';
+import {Species} from '../../../Model/Species';
 
 @Component({
   selector: 'app-pet-detail', templateUrl: './pet-detail.component.html', styleUrls: ['./pet-detail.component.css']
@@ -14,7 +16,7 @@ import {MatDialog} from '@angular/material';
 export class PetDetailComponent implements OnInit {
   edit = false;
   pet: Pet;
-
+  species1: Species[];
   updatePetForm = this.fb.group({
     id: ['', Validators.required],
     imageUrl: [''],
@@ -31,7 +33,8 @@ export class PetDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private fb: FormBuilder,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private speciesService: SpeciesService
   ) {
   }
 
@@ -42,11 +45,11 @@ export class PetDetailComponent implements OnInit {
         id: pet.id,
         name: pet.name,
         imageUrl: pet.imageUrl,
-        species: pet.species,
         color: pet.color,
         price: pet.price,
         birthDate: pet.birthDate,
-        soldDate: pet.soldDate
+        soldDate: pet.soldDate,
+        species: pet.species
       });
       this.pet = pet;
     });
@@ -69,15 +72,21 @@ export class PetDetailComponent implements OnInit {
   }
 
   saveChanges(): void {
-      this.petService.editPet(this.updatePetForm.value).subscribe(result => {
-        console.log(result);
-        this.getPet();
-      });
-      this.edit = false;
+    this.petService.editPet(this.updatePetForm.value).subscribe(result => {
+      console.log(result);
+      this.getPet();
+    });
+    this.edit = false;
   }
 
   ngOnInit() {
     this.getPet();
+    this.speciesService.getAllSpecies().subscribe((result) => this.species1 = result);
+  }
+
+  compareFn(a, b) {
+    console.log(a, b, a && b && a.num === b.num);
+    return a && b && a.num === b.num;
   }
 
 }

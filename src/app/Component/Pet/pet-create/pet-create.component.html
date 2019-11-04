@@ -21,7 +21,7 @@
             <select class="input-selector" placeholder="Species" formControlName="species">
               <option value="">Select Species...</option>
               <option class="input-options" *ngFor="let item of species" [value]="item.id">
-                {{item.name}}
+                {{item.name | titlecase}}
               </option>
             </select>
         </div>

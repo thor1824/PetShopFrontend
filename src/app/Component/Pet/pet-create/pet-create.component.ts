@@ -5,6 +5,7 @@ import {PetService} from '../../../Services/pet.service';
 import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmationDialog';
 import {MatDialog} from '@angular/material';
 import {Species} from '../../../Model/Species';
+import {SpeciesService} from '../../../Services/species.service';
 
 @Component({
   selector: 'app-pet-create',
@@ -22,18 +23,22 @@ export class PetCreateComponent implements OnInit {
     color: ['', Validators.required],
     price: ['', Validators.required],
     birthDate: ['', Validators.required],
+    soldDate: ['']
   });
-  species: Species[] = [
-    {id: 1, name: 'Ged'},
-    {id: 2, name: 'Kat'},
-    {id: 3, name: 'Hund'}
-  ];
 
-  constructor(private fb: FormBuilder, private location: Location, private petService: PetService, private matDialog: MatDialog) {
+  species: Species[];
+
+  constructor(private fb: FormBuilder,
+              private location: Location,
+              private petService: PetService,
+              private matDialog: MatDialog,
+              private speciesService: SpeciesService
+  ) {
   }
 
   ngOnInit() {
     this.placeholderImg = 'https://via.placeholder.com/150';
+    this.speciesService.getAllSpecies().subscribe(data => this.species = data);
   }
 
   createNewPet() {

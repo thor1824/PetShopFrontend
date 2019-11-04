@@ -72,4 +72,44 @@ export class PetService {
     return this.http.put(this.PET_API_URL, pet, httpOptions)
       .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
   }
+
+  getAllSpecies(pageIndex: number, pageSize: number): Observable<PageList<Pet>> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    return this.http.get<PageList<Pet>>(this.PET_API_URL + '?pageIndex=' + pageIndex + '&pageSize=' + pageSize, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
+  }
+
+  getSpecies(id: number): Observable<Pet> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    return this.http.get<Pet>(this.PET_API_URL + '/' + id, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
+  }
+
+  deleteSpecies(id: number): Observable<Pet> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    return this.http.delete<Pet>(this.PET_API_URL + '/' + id, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
+  }
+
+  createSpecies(pet: Pet): Observable<any> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    return this.http.post(this.PET_API_URL, pet, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
+  }
+
+  editSpecies(pet: Pet): Observable<any> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    return this.http.put(this.PET_API_URL, pet, httpOptions)
+      .pipe(catchError(error => handleHttpError(error, this.matDialog, this.stateService)));
+  }
 }
