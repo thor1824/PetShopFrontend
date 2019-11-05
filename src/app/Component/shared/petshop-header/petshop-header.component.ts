@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {StateService} from '../../../Services/state.service';
 import {MatDialog} from '@angular/material';
 import {openLoginWindow} from 'src/app/Functions/Dialog/OpenLoginDialog';
+import {AuthenticationService} from '../../../Services/authentication.service';
 
 @Component({
   selector: 'app-petshop-header',
@@ -14,7 +15,7 @@ export class PetshopHeaderComponent implements OnInit {
   isLoggedIn: boolean;
   toggleUserCard: boolean;
 
-  constructor(private state: StateService, private matDialog: MatDialog) {
+  constructor(private state: StateService, private matDialog: MatDialog , private authService: AuthenticationService) {
     state.loggedInStatus$.subscribe(result => this.isLoggedIn = result);
     state.emit();
   }
@@ -34,7 +35,7 @@ export class PetshopHeaderComponent implements OnInit {
 
   logout() {
     this.toggleUsercard();
-    this.state.logoutEmit();
+    this.authService.logout();
   }
 
   toggleUsercard() {

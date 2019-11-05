@@ -3,57 +3,64 @@
   <div class="pet-detail-card">
     <h2>Create New Pet</h2>
     <div [formGroup]="newPetForm">
-      <div class="pet-detail-img">
-        <img [src]="placeholderImg" align="left" class="card-info-img">
-        <div class="pet-detail-url" valign="bottom">
-          <label class="lbl-static">ImageUrl:</label>
-          <input class="input-txt" formControlName="imageUrl" placeholder="image url" required value=""/>
+      <div class="pet-detail-img" align="center">
+        <div class="pet-detail">
+          <img [src]="placeholderImg" class="card-info-img">
+        </div>
+        <div class="pet-detail pet-detail-url" valign="bottom">
+          <mat-form-field>
+            <input matInput class="txt-input" formControlName="imageUrl" placeholder="ImageUrl" value=""/>
+          </mat-form-field>
         </div>
       </div>
-      <div class="txt-input-box">
+      <div class="txt-input-box" align="center" valign="center">
         <div class="pet-detail">
-          <label class="lbl-static">Name:</label>
-          <input class="input-txt" formControlName="name" placeholder="name"/>
+          <mat-form-field>
+            <input matInput class="txt-input" formControlName="name" placeholder="name"/>
+          </mat-form-field>
         </div>
         <div class="pet-detail">
-
-            <label class="lbl-static">Species:</label>
-            <select class="input-selector" placeholder="Species" formControlName="species">
-              <option value="">Select Species...</option>
-              <option class="input-options" *ngFor="let item of species" [value]="item.id">
+          <mat-form-field>
+            <mat-label>Species</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let item of species" [value]="item.id">
                 {{item.name | titlecase}}
-              </option>
-            </select>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="pet-detail">
-          <label class="lbl-static">Color:</label>
-          <input class="input-txt" formControlName="color" placeholder="Color"/>
+          <mat-form-field>
+            <input matInput class="txt-input" formControlName="color" placeholder="Color"/>
+          </mat-form-field>
         </div>
         <div class="pet-detail">
-          <label class="lbl-static">Price:</label>
-          <input class="input-txt" formControlName="price" placeholder="Price"/>
+          <mat-form-field>
+            <input matInput class="txt-input" formControlName="price" placeholder="Price"/>
+          </mat-form-field>
         </div>
       </div>
-      <div class="pet-detail">
-        <label class="lbl-static-date">Birthday:</label>
-        <div class="pet-detail-date">
-          <input [matDatepicker]="picker" class="input-date" formControlName="birthDate" matInput
-                 placeholder="Birthday">
-          <mat-datepicker-toggle [for]="picker" matSuffix>
-            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-          </mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+
+      <div align="center">
+        <div class="pet-detail">
+          <mat-form-field>
+            <input class="txt-input" [matDatepicker]="picker" formControlName="birthDate" matInput
+                   placeholder="Birthday">
+            <mat-datepicker-toggle [for]="picker" matSuffix>
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         </div>
-      </div>
-      <div class="pet-detail">
-        <label class="lbl-static-date">Sold Date:</label>
-        <div class="pet-detail-date">
-          <input [matDatepicker]="picker2" class="input-date" formControlName="birthDate" matInput
-                 placeholder="Sold Date">
-          <mat-datepicker-toggle [for]="picker2" matSuffix>
-            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-          </mat-datepicker-toggle>
-          <mat-datepicker #picker2></mat-datepicker>
+        <div class="pet-detail">
+          <mat-form-field>
+            <input [matDatepicker]="picker2" class="txt-input" formControlName="soldDate" matInput
+                   placeholder="Sold Date">
+            <mat-datepicker-toggle [for]="picker2" matSuffix>
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
         </div>
       </div>
     </div>

@@ -10,7 +10,6 @@ import {AuthenticationService} from '../../../Services/authentication.service';
 export class UserLoginComponent {
   username: string;
   password: string;
-  isLoggedIn = false;
   loading = false;
 
   constructor(
@@ -33,8 +32,8 @@ export class UserLoginComponent {
       } else {
         console.log('fail');
       }
-      this.loading = false;
       this.dialogRef.close();
+      this.loading = false;
     });
   }
 }

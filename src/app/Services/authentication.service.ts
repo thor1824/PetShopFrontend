@@ -14,12 +14,7 @@ import {Router} from '@angular/router';
 export class AuthenticationService {
 
   constructor(private http: HttpClient, private matDialog: MatDialog, private state: StateService, private router: Router) {
-    state.loggedInStatus$.subscribe(result => {
-      console.log('haps:' + result);
-      if (!result) {
-        this.logout();
-      }
-    });
+
   }
 
   login(username: string, password: string): Observable<boolean> {
@@ -56,6 +51,7 @@ export class AuthenticationService {
   logout(): void {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
+    this.state.logoutEmit();
     this.router.navigate(['/dashboard']);
   }
 }

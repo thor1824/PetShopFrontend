@@ -115,8 +115,7 @@ span {
 }
 
 .card-info-img {
-  float: left;
-  align: left;
+  display: inline-block;
   margin-right: 16px;
   height: 150px;
   width: 150px;
@@ -132,7 +131,6 @@ span {
 
 .pet-detail {
   vertical-align: top;
-  height: 70px;
   width: 50%;
   min-width: 400px;
   float: top;
@@ -153,8 +151,9 @@ span {
 }
 
 .pet-detail-url {
-
+  align-content: flex-start;
 }
+
 .input-selector{
   clear: both;
   height: 2em;
@@ -171,5 +170,14 @@ span {
 option:not(:first-of-type) {
   margin: 5px;
   color: #e3dac9;
+}
+
+.txt-input {
+  color: #e3dac9 !important;
+  width: 246px !important;
+}
+
+mat-form-field{
+ width: 246px;
 }
 
