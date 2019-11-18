@@ -29,7 +29,7 @@
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 1;
+  z-index: 999;
 }
 
 /* Links - change color on hover */

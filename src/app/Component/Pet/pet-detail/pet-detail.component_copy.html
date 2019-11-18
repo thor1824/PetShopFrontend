@@ -1,0 +1,86 @@
+
+<div class="main-content">
+  <div [formGroup]="updatePetForm">
+    <div *ngIf="pet" class="pet-detail-card">
+      <h2>{{pet.name | uppercase}} Details</h2>
+      <div class="pet-detail-img">
+        <img *ngIf="pet.imageUrl" [src]=pet.imageUrl align="left" class="card-info-img">
+        <img *ngIf="!pet.imageUrl" align="left" class="card-info-img" src="https://via.placeholder.com/150">
+        <div class="pet-detail-url" valign="bottom">
+          <label class="lbl-static">ImageUrl:</label>
+          <input *ngIf="edit" class="input-txt" formControlName="imageUrl" placeholder="ImageUrl"
+                 value="{{pet.imageUrl}}"/>
+          <label *ngIf="!edit" class="lbl-Var">{{pet.imageUrl}}</label>
+        </div>
+      </div>
+      <div class="txt-input-box">
+        <div class="pet-detail">
+          <label class="lbl-static">Id: </label>
+          <label class="lbl-var">{{pet.id}}</label>
+        </div>
+        <div class="pet-detail">
+          <label class="lbl-static">Name:</label>
+          <input *ngIf="edit" class="input-txt" formControlName="name" placeholder="name" value="{{pet.name}}"/>
+          <label *ngIf="!edit" class="lbl-Var">{{pet.name | titlecase}}</label>
+        </div>
+        <div class="pet-detail">
+          <label class="lbl-static">Species:</label>
+          <select *ngIf="edit" [compareWith]="compareFn" class="input-selector" formControlName="species"
+                  placeholder="Species">
+            <option *ngFor="let item of species1" [ngValue]="item" class="input-options">
+              {{item.name | titlecase}}
+            </option>
+          </select>
+
+
+          <label *ngIf="!edit" class="lbl-Var">{{pet.species.name | titlecase}}</label>
+        </div>
+        <div class="pet-detail">
+          <label class="lbl-static">Color:</label>
+          <input *ngIf="edit" class="input-txt" formControlName="color" placeholder="Color" value="{{pet.color}}"/>
+          <label *ngIf="!edit" class="lbl-Var">{{pet.color | titlecase}}</label>
+        </div>
+        <div class="pet-detail">
+          <label class="lbl-static">Price:</label>
+          <input *ngIf="edit" class="input-txt" formControlName="price" placeholder="Price" value="{{pet.price}}"/>
+          <label *ngIf="!edit" class="lbl-Var">{{pet.price}}DKK</label>
+        </div>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static-date">Birthday:</label>
+        <div *ngIf="edit" class="pet-detail-date">
+          <input [matDatepicker]="picker" class="input-date" formControlName="birthDate" matInput placeholder="Birthday"
+                 value="{{pet.birthDate}}">
+          <mat-datepicker-toggle [for]="picker" matSuffix>
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+        <label *ngIf="!edit" class="lbl-Var">{{pet.birthDate}}</label>
+      </div>
+      <div class="pet-detail">
+        <label class="lbl-static-date">Sold Date:</label>
+        <div *ngIf="edit" class="pet-detail-date">
+          <input [matDatepicker]="picker2" class="input-date" formControlName="soldDate" matInput
+                 placeholder="Sold Date"
+                 value="{{pet.soldDate}}">
+          <mat-datepicker-toggle [for]="picker2" matSuffix>
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </div>
+        <label *ngIf="!edit" class="lbl-Var">{{pet.soldDate}}</label>
+      </div>
+
+    </div>
+    <div *ngIf="edit===false" class="button-box">
+
+      <button (click)="goBack()" mat-button>Back</button>
+      <button (click)="enableEdit(true)" mat-button>Edit</button>
+    </div>
+    <div *ngIf="edit===true" class="button-box">
+      <button (click)="enableEdit(false)" mat-button>Cancel</button>
+      <button (click)="openEditDialog()" [disabled]="!updatePetForm.valid" mat-button>Save</button>
+    </div>
+  </div>
+</div>

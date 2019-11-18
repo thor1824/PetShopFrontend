@@ -3,6 +3,7 @@ import {StateService} from '../../../Services/state.service';
 import {MatDialog} from '@angular/material';
 import {openLoginWindow} from 'src/app/Functions/Dialog/OpenLoginDialog';
 import {AuthenticationService} from '../../../Services/authentication.service';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-petshop-header',
@@ -45,4 +46,6 @@ export class PetshopHeaderComponent implements OnInit {
       this.toggleUserCard = true;
     }
   }
+
+
 }

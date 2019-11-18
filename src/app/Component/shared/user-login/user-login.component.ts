@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {AuthenticationService} from '../../../Services/authentication.service';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-login',
@@ -27,6 +28,7 @@ export class UserLoginComponent {
   login() {
     this.loading = true;
     this.as.login(this.username, this.password).subscribe((result) => {
+      delay(2000);
       if (result) {
         console.log('check');
       } else {

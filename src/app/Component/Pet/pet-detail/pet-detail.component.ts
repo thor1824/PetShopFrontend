@@ -8,6 +8,7 @@ import {openConfirmationDialog} from '../../../Functions/Dialog/OpenConfirmation
 import {MatDialog} from '@angular/material';
 import {SpeciesService} from '../../../Services/species.service';
 import {Species} from '../../../Model/Species';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-pet-detail', templateUrl: './pet-detail.component.html', styleUrls: ['./pet-detail.component.css']
@@ -16,7 +17,22 @@ import {Species} from '../../../Model/Species';
 export class PetDetailComponent implements OnInit {
   edit = false;
   pet: Pet;
-  species1: Species[];
+  species: Species[];
+
+  todo = [
+    'Get to work',
+    'Pick up groceries',
+    'Go home',
+    'Fall asleep'
+  ];
+
+  done = [
+    'Get up',
+    'Brush teeth',
+    'Take a shower',
+    'Check e-mail',
+    'Walk dog'
+  ];
   updatePetForm = this.fb.group({
     id: ['', Validators.required],
     imageUrl: [''],
@@ -81,11 +97,24 @@ export class PetDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getPet();
-    this.speciesService.getAllSpecies().subscribe((result) => this.species1 = result);
+    this.speciesService.getAllSpecies().subscribe((result) => this.species = result);
   }
 
   compareFn(a: Species, b: Species) {
     return a.id === b.id;
   }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
+  }
+
+
 
 }

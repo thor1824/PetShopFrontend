@@ -3,7 +3,7 @@ label {
   display: inline-block;
   width: auto;
   margin: .5em 0;
-  color: #eeeeee;
+  color: #e3dac9;
   font-weight: bold;
 }
 
@@ -103,7 +103,6 @@ span {
   background-color: #444444;
   display: compact;
   box-shadow: 2px 2px 4px 0px black;
-
 }
 
 .txt-input-box {
@@ -115,7 +114,8 @@ span {
 }
 
 .card-info-img {
-  display: inline-block;
+  float: left;
+  align: left;
   margin-right: 16px;
   height: 150px;
   width: 150px;
@@ -131,6 +131,7 @@ span {
 
 .pet-detail {
   vertical-align: top;
+  height: 70px;
   width: 50%;
   min-width: 400px;
   float: top;
@@ -150,23 +151,8 @@ span {
 
 }
 
-.url{
-  width: 100% !important;
-  color: #e3dac9;
-
-}
-
-.img{
-  width: 150px;
-  min-width: unset;
-
-}
-
 .pet-detail-url {
-  align-content: flex-start;
-  min-width: unset;
-  width: 480px;
-  padding-left: 20px;
+
 }
 
 .input-selector{
@@ -182,10 +168,6 @@ span {
   width: 61.5%;
   margin-bottom: 4px;
 }
-option:not(:first-of-type) {
-  margin: 5px;
-  color: #e3dac9;
-}
 
 .txt-input {
   color: #e3dac9 !important;
@@ -193,6 +175,5 @@ option:not(:first-of-type) {
 }
 
 mat-form-field{
- width: 246px;
+  width: 246px;
 }
-

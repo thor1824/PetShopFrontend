@@ -1,28 +1,28 @@
 <div *ngIf="placeholderImg" class="main-content">
 
   <div class="pet-detail-card">
-    <h2>Create New Pet</h2>
+    <h2 style="margin-left: 73px">Create New Pet</h2>
     <div [formGroup]="newPetForm">
-      <div class="pet-detail-img" align="center">
-        <div class="pet-detail">
-          <img [src]="placeholderImg" class="card-info-img">
+      <div align="center" class="pet-detail-img">
+        <div class="pet-detail img">
+          <img [src]="placeholderImg" class="img" class="card-info-img">
         </div>
         <div class="pet-detail pet-detail-url" valign="bottom">
-          <mat-form-field>
-            <input matInput class="txt-input" formControlName="imageUrl" placeholder="ImageUrl" value=""/>
+          <mat-form-field class="url">
+            <input class="txt-input, url" formControlName="imageUrl" matInput placeholder="ImageUrl"/>
           </mat-form-field>
         </div>
       </div>
-      <div class="txt-input-box" align="center" valign="center">
+      <div align="center" class="txt-input-box" valign="center">
         <div class="pet-detail">
           <mat-form-field>
-            <input matInput class="txt-input" formControlName="name" placeholder="name"/>
+            <input class="txt-input" formControlName="name" matInput placeholder="name"  required/>
           </mat-form-field>
         </div>
         <div class="pet-detail">
           <mat-form-field>
             <mat-label>Species</mat-label>
-            <mat-select>
+            <mat-select formControlName="species" required>
               <mat-option *ngFor="let item of species" [value]="item.id">
                 {{item.name | titlecase}}
               </mat-option>
@@ -31,12 +31,12 @@
         </div>
         <div class="pet-detail">
           <mat-form-field>
-            <input matInput class="txt-input" formControlName="color" placeholder="Color"/>
+            <input class="txt-input" formControlName="color" matInput placeholder="Color" required/>
           </mat-form-field>
         </div>
         <div class="pet-detail">
           <mat-form-field>
-            <input matInput class="txt-input" formControlName="price" placeholder="Price"/>
+            <input class="txt-input" formControlName="price" matInput placeholder="Price" required/>
           </mat-form-field>
         </div>
       </div>
@@ -44,8 +44,8 @@
       <div align="center">
         <div class="pet-detail">
           <mat-form-field>
-            <input class="txt-input" [matDatepicker]="picker" formControlName="birthDate" matInput
-                   placeholder="Birthday">
+            <input [matDatepicker]="picker" class="txt-input" formControlName="birthDate" matInput
+                   placeholder="Birthday" required>
             <mat-datepicker-toggle [for]="picker" matSuffix>
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
